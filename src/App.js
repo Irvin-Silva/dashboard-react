@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <div className="header">
+          <h1>Bienvenido, Administrador</h1>
+        </div>
+        <div className="divider"></div> {/* Barra divisoria */}
+        <div className="buttons">
+          <button className="button-usuario">Usuario</button>
+          <button className="button-formulario">Formulario</button>
+        </div>
+        <img className="background-image" src={process.env.PUBLIC_URL + '/assets/image2.png'} alt="Fondo" />
+        <Link to="/salida" className="logout-icon">
+          <FontAwesomeIcon icon={faSignOutAlt} />
+        </Link>
+      </div>
+      <Routes>
+        <Route path="/salida" element={<Salida />} />
+      </Routes>
+    </Router>
   );
-}
+};
+
+const Salida = () => {
+  return <h2>¡Has salido! Hasta luego.</h2>;
+};
 
 export default App;

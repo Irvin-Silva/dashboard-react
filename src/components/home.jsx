@@ -30,10 +30,9 @@ const Home = () => {
         <div className="divider"></div>
         <div className="content">
           <div className="buttons">
-            <button onClick={() => navigate('usuarios')} className="button-usuario">Usuario</button>
-            <button onClick={() => navigate('formularios')} className="button-formulario">Formulario</button>
+            <button onClick={() => navigate('/usuarios')} className="button-usuario">Usuario</button>
+            <button onClick={() => navigate('/formularios')} className="button-formulario">Formulario</button>
           </div>
-          <img className="background-image" src={process.env.PUBLIC_URL + '/assets/image2.png'} alt="Fondo" />
         </div>
         <div className="footer">
           <Link to="/salida" className="logout-icon">

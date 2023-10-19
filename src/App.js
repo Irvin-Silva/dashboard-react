@@ -5,7 +5,7 @@ import './App.css';
 import Home from './components/home';
 import Salida from './components/salida';
 import Usuarios from './components/usuarios';
-import Formularios from './components/formularios';
+import Formularios from './components/Formularios';
 import FormDetails from './components/FormDetails';
 import CrearFormulario from './components/CrearFormulario';
 import UserDetails from './components/UserDetails';

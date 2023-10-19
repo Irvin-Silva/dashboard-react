@@ -78,8 +78,6 @@ const CrearFormulario = () => {
             <option value="text">Texto</option>
             <option value="number">Número</option>
             <option value="date">Fecha</option>
-            <option value="email">Correo electrónico</option>
-            <option value="password">Contraseña</option>
             {/* Puedes agregar más tipos si lo deseas */}
           </select>
           <button onClick={() => eliminarCampo(index)}>

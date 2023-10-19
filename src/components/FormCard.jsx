@@ -12,9 +12,10 @@ const FormCard = ({ id, nombre, numero }) => {
   return (
     <div 
       onClick={handleClick} 
-      className="block p-4 bg-green-200 rounded-lg shadow-md hover:bg-green-300 transition duration-300">
-      <h2 className="text-xl font-medium text-green-800">{nombre}</h2>
-      <p className="text-gray-700">Número de campos: {numero}</p>
+      className="p-4 rounded-lg shadow-md transition duration-300  hover:bg-green-300 rounded-lg block cursor-pointer">
+      <h2 className="text-gray-800 font-semibold text-lg mb-2">{nombre}</h2>
+      <p className="ext-gray-600 text-sm mb-2">Número de campos: {numero}</p>
+      <div className="h-px bg-gray-400"></div>
     </div>
   );
 };

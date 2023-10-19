@@ -20,7 +20,7 @@ const Formularios = () => {
         .then(response => response.json())
         .then(data => setFormularios(data.forms))
         .catch(error => console.error("Hubo un error al obtener los formularios:", error));
-    }, []);
+    }, [entidad]);
   
     return (
         <>

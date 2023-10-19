@@ -7,6 +7,7 @@ import Salida from './components/salida';
 import Usuarios from './components/usuarios';
 import Formularios from './components/Formularios';
 import FormDetails from './components/FormDetails';
+import CrearFormulario from './components/CrearFormulario';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/usuarios" element={<Usuarios />} />
         <Route path="/formularios" element={<Formularios />} />
         <Route path="/form-details/:id" element={<FormDetails />} />
+        <Route path="/crear-formulario" element={<CrearFormulario />} />
 
       </Routes>
 

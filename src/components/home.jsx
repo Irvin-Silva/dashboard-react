@@ -31,7 +31,7 @@ const Home = () => {
         <div className="content">
           <div className="buttons">
             <button onClick={() => navigate('/usuarios')} className="button-usuario">Usuario</button>
-            <button onClick={() => navigate('/formularios')} className="button-formulario">Formulario</button>
+            <button onClick={() => navigate('/formularios')} className="button-formulario bg-green-600">Formulario</button>
           </div>
         </div>
         <div className="footer">

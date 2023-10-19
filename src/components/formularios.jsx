@@ -24,7 +24,7 @@ const Formularios = () => {
   
     return (
         <>
-      <div className="rounded-lg bg-green-400 p-8 max-w-lg mx-auto mt-10 shadow-lg"> {/* Agregado más padding con p-8 */}
+      <div className="rounded-lg bg-green-600 p-8 max-w-lg mx-auto mt-10 shadow-lg"> {/* Agregado más padding con p-8 */}
         <h1 className="text-2xl font-bold mb-5 text-white text-center">Formularios</h1> {/* Texto centrado con text-center */}
         <div className="overflow-y-auto max-h-96">
           {formularios.map(form => (

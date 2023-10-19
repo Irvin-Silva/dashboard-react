@@ -8,9 +8,10 @@ const CrearFormulario = () => {
   const navigate = useNavigate();
   const entidad = useEntidadStore(state => state.entidad);
   const [campos, setCampos] = useState([]);
+  const [nombreFormulario, setNombreFormulario] = useState(''); // Nuevo estado
 
   const agregarCampo = () => {
-    setCampos([...campos, { campo: '', tipo: 'text' }]);
+    setCampos([...campos, { campo: '', type: 'text' }]);
   };
 
   const eliminarCampo = (index) => {
@@ -26,13 +27,41 @@ const CrearFormulario = () => {
   };
 
   const enviarFormulario = () => {
-    // El resto del código permanece igual...
+    const payload = {
+      entidad_id: Number(entidad),
+      nombre: nombreFormulario,
+      campos: campos
+    };
+
+
+
+    fetch('https://fcpay-production.up.railway.app/create-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("Formulario creado exitosamente");
+        navigate('/formularios');
+      } else {
+        alert("Hubo un error al crear el formulario");
+      }
+    })
+    .catch(error => console.error("Error al enviar el formulario:", error));
   };
 
   return (
-    <div className="p-4 max-h-screen overflow-y-auto rounded-lg shadow-md bg-green-200 mx-4 my-4">
-      <h1 className="text-2xl mb-4 font-bold text-green-700 underline">Crear nuevo formulario</h1>
-
+    <div className="p-4 max-h-screen overflow-y-auto rounded-lg shadow-md bg-green-700 mx-4 my-4">
+      <h1 className="text-2xl mb-4 font-bold text-white underline">Crear nuevo formulario</h1>
+        <input 
+        value={nombreFormulario}
+        onChange={(e) => setNombreFormulario(e.target.value)}
+        placeholder="Nombre del Formulario"
+        className="p-2 border rounded-md mb-4 w-full"
+      />
       {campos.map((campo, index) => (
         <div key={index} className="mb-2 flex space-x-4">
           <input 
